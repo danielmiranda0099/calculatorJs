@@ -49,12 +49,15 @@ background: linear-gradient(211deg, rgba(26,82,126,1) 12%, rgba(132,28,148,1) 39
     justify-content: flex-end;
 
     border: 2px solid #6ca8a4;
+    
+    overflow:hidden;
 }
 
 .pantalla h1 {
     padding-right: 5px;
 }
 
+.clear,
 .boton-igual,
 .botones {
     height: 50px;
@@ -71,7 +74,21 @@ background: linear-gradient(211deg, rgba(26,82,126,1) 12%, rgba(132,28,148,1) 39
     grid-column: span 2;
 }
 
-#clear {
+#clean {
     background: #FF5C45;
 }
+
+
+@media only screen and (max-width: 800px){
+    .container{
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 470px){
+    .container{
+        width: 80%;
+    }
+}
+
 

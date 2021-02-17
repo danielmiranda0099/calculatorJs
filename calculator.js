@@ -1,21 +1,18 @@
 const boton = document.querySelectorAll('.botones');
 const pantalla = document.getElementById('pantalla');
 const botonResultado = document.getElementById('igual');
-let estado = false;
-
+const clear = document.getElementById('clean');
+let simbolo = '';
 
 function limpiar() {
-    if(estado){
         let htmlString = '';
         pantalla.innerHTML = htmlString;
-        estado =! estado;
-    }
-    console.log(estado);
 }
 
 function botonPulsado(boton) {
-    limpiar();
-    pantalla.innerHTML += boton.getAttribute('data-valor');
+    simbolo = boton.getAttribute('data-valor');
+    pantalla.innerHTML += simbolo;
+    animation(simbolo, 'animate__heartBeat');
 }
 
 boton.forEach(function(boton){
@@ -26,14 +23,30 @@ boton.forEach(function(boton){
 
 
 function resultado() {
-    estado =! estado;
+    animation('igual', 'animate__heartBeat');
+    animation('id_container', 'animate__headShake');
     if(pantalla.innerHTML != ''){
         pantalla.innerHTML = eval(pantalla.innerHTML);
     }
 }
 
-
+function animation(simbolo, anim){
+    document.getElementById(simbolo).classList.toggle(anim);
+    setTimeout(function(){
+        document.getElementById(simbolo).classList.toggle(anim);
+    }, 300);
+}
 
 botonResultado.addEventListener('click', resultado);
+
+clear.addEventListener('click', function(){
+    animation('clean', 'animate__heartBeat');
+    limpiar();
+});
+
+
+setTimeout(function(){
+    document.getElementById('id_container').classList.toggle('animate__flip');
+}, 2000);
 
 
