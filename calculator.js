@@ -1,47 +1,46 @@
-const boton = document.querySelectorAll('.botones');
-const pantalla = document.getElementById('pantalla');
-const botonResultado = document.getElementById('igual');
+const button = document.querySelectorAll('.buttons');
+const screen = document.getElementById('screen');
+const buttonResult = document.getElementById('equal');
 const clear = document.getElementById('clean');
-let simbolo = '';
+let symbol = '';
 
-function limpiar() {
-        let htmlString = '';
-        pantalla.innerHTML = htmlString;
+function Clear() {
+        screen.innerHTML = '';
 }
 
-function botonPulsado(boton) {
-    simbolo = boton.getAttribute('data-valor');
-    pantalla.innerHTML += simbolo;
-    animation(simbolo, 'animate__heartBeat');
+function ButtonPressed(button) {
+    symbol = button.getAttribute('data-valor');
+    screen.innerHTML += symbol;
+    Animation(symbol, 'animate__heartBeat');
 }
 
-boton.forEach(function(boton){
-    boton.addEventListener("click", /*FUNCION FANTASMA*/ function() {
-        botonPulsado(boton);
+button.forEach(function(button){
+    button.addEventListener("click", /*FUNCION FANTASMA*/ function() {
+        ButtonPressed(button);
     });
 });
 
 
-function resultado() {
-    animation('igual', 'animate__heartBeat');
-    animation('id_container', 'animate__headShake');
-    if(pantalla.innerHTML != ''){
-        pantalla.innerHTML = eval(pantalla.innerHTML);
+function result() {
+    Animation('equal', 'animate__heartBeat');
+    Animation('id_container', 'animate__headShake');
+    if(screen.innerHTML != ''){
+        screen.innerHTML = eval(screen.innerHTML);
     }
 }
 
-function animation(simbolo, anim){
-    document.getElementById(simbolo).classList.toggle(anim);
+function Animation(symbol, anim){
+    document.getElementById(symbol).classList.toggle(anim);
     setTimeout(function(){
-        document.getElementById(simbolo).classList.toggle(anim);
+        document.getElementById(symbol).classList.toggle(anim);
     }, 300);
 }
 
-botonResultado.addEventListener('click', resultado);
+buttonResult.addEventListener('click', result);
 
 clear.addEventListener('click', function(){
-    animation('clean', 'animate__heartBeat');
-    limpiar();
+    Animation('clean', 'animate__heartBeat');
+    Clear();
 });
 
 

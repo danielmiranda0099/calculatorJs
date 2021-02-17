@@ -6,7 +6,7 @@
 body{
     min-height: 100vh;   
     background: rgb(26,82,126);
-background: linear-gradient(211deg, rgba(26,82,126,1) 12%, rgba(132,28,148,1) 39%, rgba(255,208,0,1) 99%);
+    background: linear-gradient(211deg, rgba(26,82,126,1) 12%, rgba(132,28,148,1) 39%, rgba(255,208,0,1) 99%);
 }
 
 .container-container{
@@ -34,9 +34,9 @@ background: linear-gradient(211deg, rgba(26,82,126,1) 12%, rgba(132,28,148,1) 39
     border: 3px solid #6d6d6d;
 }
 
-.pantalla {
+.screen {
     grid-column: 1/5;
-    /*background: #73BDB7;*/
+
     background: rgb(153,233,227);
     background: linear-gradient(211deg, rgba(153,233,227,1) 9%, rgba(115,189,183,1) 46%, rgba(198,255,250,1) 99%);
     
@@ -53,13 +53,13 @@ background: linear-gradient(211deg, rgba(26,82,126,1) 12%, rgba(132,28,148,1) 39
     overflow:hidden;
 }
 
-.pantalla h1 {
+.screen h1 {
     padding-right: 5px;
 }
 
 .clear,
-.boton-igual,
-.botones {
+.buttons-equal,
+.buttons {
     height: 50px;
     border-radius: 15px;
 
@@ -69,7 +69,7 @@ background: linear-gradient(211deg, rgba(26,82,126,1) 12%, rgba(132,28,148,1) 39
     outline: inherit;
 }
 
-.boton-igual {
+.buttons-equal {
     background: #FFA640;
     grid-column: span 2;
 }
